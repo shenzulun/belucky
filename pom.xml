@@ -90,6 +90,72 @@
   		<artifactId>druid</artifactId>
   		<version>1.0.12</version>
   	</dependency>
+  	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-core</artifactId>
+		<version>2.5.0</version>
+	</dependency>
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-annotations</artifactId>
+		<version>2.5.0</version>
+	</dependency>
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-databind</artifactId>
+		<version>2.5.0</version>
+	</dependency>
   </dependencies>
-  
+  <build>
+  	<plugins>
+  		<plugin>
+			  <groupId>org.eclipse.jetty</groupId>
+			  <artifactId>jetty-maven-plugin</artifactId>
+			  <version>9.2.0.M0</version>
+			  <configuration>
+			  	
+			    <jettyXml>${project.basedir}/src/main/webapp/jetty/jetty.xml,${project.basedir}/src/main/webapp/jetty/jetty-http.xml,${project.basedir}/src/main/webapp/jetty/jetty-ssl.xml,${project.basedir}/src/main/webapp/jetty/jetty-https.xml</jettyXml>
+			     
+			     <scanIntervalSeconds>5</scanIntervalSeconds>
+			     <webApp>
+			      <contextPath>/</contextPath>
+			     </webApp>
+			  </configuration>
+		</plugin>
+  		<!-- 
+  		<plugin>  
+		     <groupId>org.apache.tomcat.maven</groupId>  
+		     <artifactId>tomcat7-maven-plugin</artifactId>  
+		     <version>2.2</version>  
+		     <configuration>  
+		         <url>http://localhost:8080/manager/text</url>   
+		         <server>tomcat</server>
+		         <username>admin</username>
+		         <password>admin</password>
+		          <path>/rookie-web</path>
+		     </configuration>  
+		</plugin>
+		
+		<plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>1.7</version>
+          <executions>
+              <execution>            
+                 <phase>package</phase>
+                 <configuration>
+                     <tasks>
+                         <copy todir="F:\dev\tools\apache\apache-tomcat-7.0.55\conf\Catalina\localhost\" 
+                         	file="F:\dev\tools\apache\apache-tomcat-7.0.55\backup\rookie-web1.xml" />
+                     </tasks>
+                 </configuration>
+                 <goals>
+                     <goal>run</goal>
+                 </goals>
+              </execution>
+          </executions>
+        </plugin>
+        -->
+  	</plugins>
+  </build>
 </project>
