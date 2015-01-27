@@ -15,18 +15,26 @@ public class Article implements java.io.Serializable{
 	
 	private Date createDt;
 	
+	private Date updateDt;
+	
 	public Article(){
 		
 	}
 
-	public Article(long id, String title, String content, String author,
-			Date createDt) {
+	public Article( String title, String content, String author) {
 		super();
-		this.id = id;
 		this.title = title;
 		this.content = content;
-		this.author = author;
-		this.createDt = createDt;
+		this.author = author;		
+	}
+	
+	public void desc(){
+		System.out.println("====================");
+		System.out.println("文章id:[" + id + "]");
+		System.out.println("标题:[" + title + "]");
+		System.out.println("作者:[" + author + "]");
+		System.out.println("发布时间:[" + createDt + "]");
+		System.out.println("====================");
 	}
 
 	public long getId() {
@@ -67,5 +75,13 @@ public class Article implements java.io.Serializable{
 
 	public void setCreateDt(Date createDt) {
 		this.createDt = createDt;
+	}
+
+	public Date getUpdateDt() {
+		return updateDt;
+	}
+
+	public void setUpdateDt(Date updateDt) {
+		this.updateDt = updateDt;
 	}
 }

@@ -3,6 +3,11 @@ package org.magen.belucky.dao.base;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 基本抽象DAO
+ * @date 2015年1月27日
+ * @author shenzl
+ */
 public interface IBaseDao {
 	
 	public <T> T save(T t);
