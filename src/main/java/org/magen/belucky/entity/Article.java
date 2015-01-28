@@ -2,6 +2,16 @@ package org.magen.belucky.entity;
 
 import java.util.Date;
 
+import org.magen.belucky.util.CustomDateSerializer;
+import org.magen.belucky.util.DateTimeUtil;
+
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+/**
+ * 文章实体类
+ * @date 2015年1月28日
+ * @author shenzl
+ */
 public class Article implements java.io.Serializable{
 	private static final long serialVersionUID = -6455522246943805543L;
 	
@@ -16,6 +26,11 @@ public class Article implements java.io.Serializable{
 	private Date createDt;
 	
 	private Date updateDt;
+	
+	/**
+	 * 非json请求界面展示用
+	 */
+	private String createDtStr;
 	
 	public Article(){
 		
@@ -69,6 +84,7 @@ public class Article implements java.io.Serializable{
 		this.author = author;
 	}
 
+	@JsonSerialize(using=CustomDateSerializer.class)
 	public Date getCreateDt() {
 		return createDt;
 	}
@@ -76,7 +92,8 @@ public class Article implements java.io.Serializable{
 	public void setCreateDt(Date createDt) {
 		this.createDt = createDt;
 	}
-
+	
+	@JsonSerialize(using=CustomDateSerializer.class)
 	public Date getUpdateDt() {
 		return updateDt;
 	}
@@ -84,4 +101,12 @@ public class Article implements java.io.Serializable{
 	public void setUpdateDt(Date updateDt) {
 		this.updateDt = updateDt;
 	}
+
+	public String getCreateDtStr() {
+		if(createDt != null){
+			return DateTimeUtil.format(createDt);
+		}
+		return createDtStr;
+	}
+	
 }

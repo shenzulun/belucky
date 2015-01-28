@@ -28,9 +28,9 @@
     <context:component-scan base-package="org.magen.belucky.web">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
-	<!-- 
+	
     <mvc:view-controller path="/" view-name="forward:/index"/>
-     -->
+    
     <!-- 当在web.xml 中   DispatcherServlet使用 <url-pattern>/</url-pattern> 映射时，能映射静态资源 -->
     <mvc:default-servlet-handler/>
     <!-- 静态资源映射 -->

@@ -1,0 +1,97 @@
+@charset "utf-8";
+@import "normalize.min.css";
+
+html,body{
+	font-family: 'Helvetica Neue', Arial, 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+	font-size: 14px;
+	height: 100%;
+	padding: 0;
+	margin:0 ;
+}
+ul, ol, dl { 
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+}
+h2{
+	font-weight: bold;
+	font-size: 24px;
+	margin:14px 0;
+}
+p {
+	font-size: 16px;
+	line-height: 1.6;
+}
+a {
+	color: #5789bb;
+	text-decoration: none; 
+}
+a:hover, a:active, a:focus { 
+	color: #009bdf;
+	text-decoration: none;
+}
+
+.clr { clear:both; padding:0; margin:0; width:100%; font-size:0px; line-height:0px;}
+
+.container{
+	min-height: 100%;
+	height: auto !important;
+	width: 960px;
+	margin: 0 auto; 
+}
+.header{
+	height: 10%;
+}
+.content{
+	padding-bottom:60px;
+}
+.footer{
+	position:relative;
+	height: 60px;
+	width: 960px;
+	margin: 0 auto; 
+	margin-top: -61px;
+	clear: both;
+	border-top:1px solid #7d7d7d;
+	text-align:center;
+}
+.footer p{
+	font-size: 12px;
+}
+
+.module-show{
+	margin: 0 auto;	
+}
+
+.module-show a{
+	margin: 0 auto;
+	font-size: 30px;
+}
+
+/* ----- MEDIA QUERIES ----- */
+/* for 980px or less */
+@media screen and (max-width: 960px) {
+	.container,.footer{
+		width: 96%;
+	}
+}
+/* for 768px or less */
+@media screen and (max-width: 768px) {
+	.container,.footer{
+		width: 96%;
+	}
+}
+/* for 480px or less */
+@media screen and (max-width: 480px) {
+	.container{
+		width: 96%;
+	}
+	.footer {
+		font-size:10px;
+	}
+	p {
+		font-size:14px;
+	}
+}

@@ -116,7 +116,7 @@
 			  	
 			    <jettyXml>${project.basedir}/src/main/webapp/jetty/jetty.xml,${project.basedir}/src/main/webapp/jetty/jetty-http.xml,${project.basedir}/src/main/webapp/jetty/jetty-ssl.xml,${project.basedir}/src/main/webapp/jetty/jetty-https.xml</jettyXml>
 			     
-			     <scanIntervalSeconds>5</scanIntervalSeconds>
+			     <scanIntervalSeconds>-1</scanIntervalSeconds>
 			     <webApp>
 			      <contextPath>/</contextPath>
 			     </webApp>

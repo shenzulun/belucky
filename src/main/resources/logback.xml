@@ -32,9 +32,9 @@
     </triggeringPolicy>
     -->
   </appender>
-  <appender name="FILE-WARN" class="ch.qos.logback.core.rolling.RollingFileAppender">
+  <appender name="FILE-ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
   	<filter class="ch.qos.logback.classic.filter.LevelFilter">
-  		<level>WARN</level>
+  		<level>ERROR</level>
   		<onMatch>ACCEPT</onMatch>
   		<onMismatch>DENY </onMismatch>
   	</filter>
@@ -67,7 +67,7 @@
 	</appender>
 	
   <!-- project default level -->
-	<logger name="org.magen.rookie" level="INFO" />
+	<logger name="org.magen.belucky" level="INFO" />
 
 	<!--log4jdbc -->
 	<!-- 
@@ -108,7 +108,7 @@
 	<root level="INFO">
 		<appender-ref ref="STDOUT" />
 		<appender-ref ref="FILE-INFO" />
-		<appender-ref ref="FILE-WARN" />
+		<appender-ref ref="FILE-ERROR" />
 	</root>
   <!--这里指定logger name 是为jmx设置日志级别做铺垫 -->
   <!-- 
