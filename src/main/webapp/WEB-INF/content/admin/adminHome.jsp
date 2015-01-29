@@ -16,7 +16,10 @@
 			<div class="page">
 				<div class="module-show">
 					<a href="${ctx}/blog/add">发布文章</a>
-				</div>				
+				</div>	
+				<div class="module-show">
+					<a href="${ctx}/blog/manage">管理文章</a>
+				</div>			
 			</div>
 		</div>
 	</div>

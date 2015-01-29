@@ -1,11 +1,9 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="ctx" value="${pageContext.request.contextPath}"/>
+<%@ page pageEncoding="UTF-8"%>
+<!DOCTYPE HTML>
 <html>
 <head>
-	<meta content="text/html; charset=UTF-8" />
 	<title>陋室</title>	
-	<link rel="stylesheet" type="text/css" href="static/css/indexstyle.css" />
+	<%@include file="base/header.jsp"%>
 </head>
 <body>	
 	<div class="container">

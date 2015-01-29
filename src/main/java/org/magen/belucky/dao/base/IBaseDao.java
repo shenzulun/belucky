@@ -14,9 +14,9 @@ public interface IBaseDao {
 	
 	public <T> void update(T t);
 	
-	public <T,PK extends java.io.Serializable> T queryById(Class<T> cls,PK id);
+	public <T,PK extends java.io.Serializable> T queryById(String tableName,PK id);
 	
-	public <PK extends java.io.Serializable> void deleteById(Class<?> cls,PK id);
+	public <PK extends java.io.Serializable> void deleteById(String tableName,PK id);
 	
 	public <T> List<T> queryBySql(String sql, Class<T> cls);
 	

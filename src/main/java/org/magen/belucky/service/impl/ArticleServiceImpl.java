@@ -27,4 +27,13 @@ public class ArticleServiceImpl implements IArticleService{
 		articleDao.saveArticle(article);
 	}
 
+	public void deleteArticle(long id) {
+		articleDao.deleteById("t_article", id);
+	}
+
+	public void updateArticle(Article article) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

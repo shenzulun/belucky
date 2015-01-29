@@ -4,7 +4,7 @@
   <!-- 控制台输出日志 -->
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
   	<encoder>
-		<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
 	</encoder>
   </appender>
   <!-- 文件输出日志 (文件大小策略进行文件输出，超过指定大小对文件备份)-->
@@ -19,7 +19,7 @@
 		<fileNamePattern>logs/out/systemout.%d{yyyy-MM-dd}.log</fileNamePattern>
 	</rollingPolicy>
 	<encoder>
-		<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
 	</encoder>
     <!-- 
     <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
@@ -43,7 +43,7 @@
 		<fileNamePattern>logs/err/systemerr.%d{yyyy-MM-dd}.log</fileNamePattern>
 	</rollingPolicy>
 	<encoder>
-		<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
 	</encoder>
 	</appender>
 	
@@ -62,7 +62,7 @@
 		</timeBasedFileNamingAndTriggeringPolicy>
 	</rollingPolicy>
 	<encoder>
-		<pattern>%d{HH:mm:ss.SSS} - %msg%n</pattern>
+		<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} - %msg%n</pattern>
 	</encoder>
 	</appender>
 	

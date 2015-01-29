@@ -13,10 +13,10 @@ values("hello sqlite3","just for test","shenzl",datetime('now'));
 
 create table t_user(
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	userNo	varchar(20)	unique,
+	user_no	varchar(50)	unique,
 	password	varchar(200),
 	create_dt	DATE,
 	status	varchar(10)
 );
 
-insert into t_user(userNo,password,create_dt) values("shenzl","shenzl",datetime('now'));
+insert into t_user(user_no,password,create_dt,status) values("shenzl","12358",datetime('now'),"1");

@@ -35,12 +35,12 @@ public class BaseDaoImpl implements IBaseDao{
 		
 	}
 
-	public <PK extends Serializable> void deleteById(Class<?> cls, PK id) {
-		// TODO Auto-generated method stub
-		
+	public <PK extends Serializable> void deleteById(String tableName, PK id) {
+		String sql = "delete from " + tableName + " where id=?";
+		this.jdbcTemplate.update(sql,id);
 	}
 
-	public <T, PK extends Serializable> T queryById(Class<T> cls, PK id) {
+	public <T, PK extends Serializable> T queryById(String tableName, PK id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

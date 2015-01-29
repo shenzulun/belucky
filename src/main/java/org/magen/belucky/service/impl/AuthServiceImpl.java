@@ -40,12 +40,10 @@ public class AuthServiceImpl implements IAuthService{
 			if(passwordDb == null){
 				isAuthPass = true;
 			}
-			log.info("用户[{}]的输入密码[{}]不正确",userNo,passwordInput);
 		}else{
 			if(passwordInput.equals(passwordDb)){
 				isAuthPass = true;
 			}
-			log.info("用户[{}]的输入密码[{}]不正确",userNo,passwordInput);
 		}
 		return isAuthPass;
 	}

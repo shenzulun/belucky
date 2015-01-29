@@ -8,10 +8,7 @@
 <body>
 	<div class="container">
 		<%@include file="../base/headmenu.jsp"%>	
-		<div class="content">
-			<c:if test="${not empty message}">
-				<div>${message}</div>
-			</c:if>
+		<div class="content">			
 			<div class="page">
 				<c:forEach items="${articles}" var="article">
 				<div class="article">				

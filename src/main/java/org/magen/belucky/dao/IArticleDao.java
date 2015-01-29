@@ -17,4 +17,6 @@ public interface IArticleDao extends IBaseDao{
 	public Article queryArticleById(long id);
 	
 	public void saveArticle(Article article);
+	
+	public void updateArticle(Article article);
 }

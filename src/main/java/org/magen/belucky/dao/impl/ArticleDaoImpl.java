@@ -4,6 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.magen.belucky.dao.IArticleDao;
 import org.magen.belucky.dao.base.BaseDaoImpl;
 import org.magen.belucky.entity.Article;
@@ -35,7 +36,12 @@ public class ArticleDaoImpl extends BaseDaoImpl implements IArticleDao {
 			Article article = new Article();
 			article.setId(rs.getLong("id"));
 			article.setTitle(rs.getString("title"));
-			article.setContent(rs.getString("content"));
+			//转换换行符为<br/>
+			String dbContent = rs.getString("content");
+			if(dbContent != null){
+				dbContent = dbContent.replace("\r\n", "<br/>").replace("\n", "<br/>");
+			}
+			article.setContent(dbContent);
 			article.setAuthor(rs.getString("author"));
 			String createDt = rs.getString("create_dt");
 			String updateDt = rs.getString("update_dt");
@@ -47,6 +53,11 @@ public class ArticleDaoImpl extends BaseDaoImpl implements IArticleDao {
 			}
 			return article;
 		}
+	}
+
+	public void updateArticle(Article article) {
+		String sql = "update t_article set title=?,content=?,author=?,update_dt=datetime('now') where id=?";
+		this.getJdbcTemplate().update(sql, article.getTitle(),article.getContent(),article.getAuthor(),article.getId());
 	}
 
 }

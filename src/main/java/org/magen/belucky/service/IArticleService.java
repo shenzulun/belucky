@@ -11,4 +11,9 @@ public interface IArticleService {
 	public Article queryArticleById(long id);
 
 	public void saveArticle(Article article);
+	
+	public void deleteArticle(long id);
+	
+	public void updateArticle(Article article);
+
 }
