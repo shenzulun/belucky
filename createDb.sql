@@ -15,6 +15,7 @@ create table t_user(
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	user_no	varchar(50)	unique,
 	password	varchar(200),
+	salt	varchar(50),
 	create_dt	DATE,
 	status	varchar(10)
 );

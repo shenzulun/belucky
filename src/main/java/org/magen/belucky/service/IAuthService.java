@@ -9,5 +9,5 @@ public interface IAuthService {
 	 * @param user
 	 * @return false:校验不通过
 	 */
-	public boolean logon(User user);
+	public boolean login(User user);
 }

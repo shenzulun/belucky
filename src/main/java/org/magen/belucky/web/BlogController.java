@@ -1,7 +1,6 @@
 package org.magen.belucky.web;
 
 import java.util.List;
-
 import org.magen.belucky.entity.Article;
 import org.magen.belucky.service.IArticleService;
 import org.magen.belucky.web.base.AbstractController;
@@ -27,43 +26,53 @@ public class BlogController extends AbstractController{
 		return "blog/blogMain";
 	}
 	
-	@RequestMapping(value="/add",method = RequestMethod.GET)
+	@RequestMapping(value="/{id}",method = RequestMethod.GET)
+	public String listOne(@PathVariable("id") Long id,Model model){
+		Article article = articleService.queryArticleById(id);
+		if(article == null){
+			return "redirect:/blog";
+		}
+		model.addAttribute("article",article);
+		return "blog/blogDetail";
+	}
+	
+	@RequestMapping(value="/m/add",method = RequestMethod.GET)
 	public String toAdd(){
 		return "blog/addBlog";
 	}
 	
-	@RequestMapping(value="/add",method = RequestMethod.POST)
+	@RequestMapping(value="/m/add",method = RequestMethod.POST)
 	public String add(Article article, RedirectAttributes redirectAttributes){
 		articleService.saveArticle(article);
 		redirectAttributes.addFlashAttribute("message","发布文章["+article.getTitle()+"]成功!");
-		return "redirect:/blog/manage";
+		return "redirect:/blog/m";
 	}
 	
-	@RequestMapping(value="/manage",method = RequestMethod.GET)
+	@RequestMapping(value="/m",method = RequestMethod.GET)
 	public String toManageBlogs(Model model){
 		List<Article> articles = articleService.queryAllArticle();
 		model.addAttribute("articles",articles);
 		return "blog/manageBlogMain";
 	}
 	
-	@RequestMapping(value="/manage/{id}/update",method = RequestMethod.GET)
+	@RequestMapping(value="/m/{id}/update",method = RequestMethod.GET)
 	public String toUpdate(@PathVariable("id") Long id,Model model){
 		Article article = articleService.queryArticleById(id);
 		model.addAttribute("article", article);
 		return "blog/updateBlog";
 	}
 	
-	@RequestMapping(value="/manage/{id}/update",method = RequestMethod.POST)
+	@RequestMapping(value="/m/{id}/update",method = RequestMethod.POST)
 	public String update(Article article, RedirectAttributes redirectAttributes){
 		articleService.updateArticle(article);
 		redirectAttributes.addFlashAttribute("message","更新文章["+article.getTitle()+"]成功!");
-		return "redirect:/blog/manage";
+		return "redirect:/blog/m";
 	}
 	
-	@RequestMapping(value="/manage/{id}/delete",method = RequestMethod.GET)
+	@RequestMapping(value="/m/{id}/delete",method = RequestMethod.GET)
 	public String delete(@PathVariable("id") Long id,RedirectAttributes redirectAttributes){
 		articleService.deleteArticle(id);
 		redirectAttributes.addFlashAttribute("message","删除文章["+id+"]成功!");
-		return "redirect:/blog/manage";
+		return "redirect:/blog/m";
 	}
 }

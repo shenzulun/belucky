@@ -2,19 +2,21 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>list</title>
+<title>后台登录</title>
 <%@include file="../base/header.jsp"%>
 </head>
 <body>
 	<div class="container">
 		<div class="header">&nbsp;</div>	
 		<div class="content">
-			<form action="${ctx}/admin" method="post">
+			<form action="${ctx}/admin/login" method="post">
 				<fieldset>
 					<input type="text" name="userNo"/>
 					<input type="password" name="password"/>
 					<input type="submit" value="登录" />
-					<input type="hidden" name="method" value="logon"/>
+					<c:if test="${not empty message}">
+						<div>${message}</div>
+					</c:if>
 				</fieldset>
 			</form>
 		</div>

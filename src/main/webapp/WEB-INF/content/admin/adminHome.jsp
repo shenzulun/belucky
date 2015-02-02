@@ -15,10 +15,10 @@
 			<a href="${ctx}/index">返回首页</a>
 			<div class="page">
 				<div class="module-show">
-					<a href="${ctx}/blog/add">发布文章</a>
+					<a href="${ctx}/blog/m/add">发布文章</a>
 				</div>	
 				<div class="module-show">
-					<a href="${ctx}/blog/manage">管理文章</a>
+					<a href="${ctx}/blog/m">管理文章</a>
 				</div>			
 			</div>
 		</div>

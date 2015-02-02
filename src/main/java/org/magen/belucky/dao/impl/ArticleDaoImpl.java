@@ -3,8 +3,6 @@ package org.magen.belucky.dao.impl;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-
-import org.apache.commons.lang.StringUtils;
 import org.magen.belucky.dao.IArticleDao;
 import org.magen.belucky.dao.base.BaseDaoImpl;
 import org.magen.belucky.entity.Article;
@@ -20,9 +18,12 @@ public class ArticleDaoImpl extends BaseDaoImpl implements IArticleDao {
 	}
 
 	public Article queryArticleById(long id) {
-		Article article = this.getJdbcTemplate().queryForObject("select * from t_article where id=?", 
+		List<Article> articles =  this.getJdbcTemplate().query("select * from t_article where id=?", 
 						new Object[]{id},new ArticleMapper());
-		return article;
+		if(articles == null || articles.size() == 0){
+			return null;
+		}
+		return articles.get(0);
 	}
 
 	public void saveArticle(Article article) {

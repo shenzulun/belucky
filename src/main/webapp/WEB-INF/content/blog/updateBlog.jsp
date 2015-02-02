@@ -12,8 +12,8 @@
 			<c:if test="${not empty message}">
 				<div>${message}</div>
 			</c:if>
-			<a href="${ctx}/blog/manage">返回上页</a>
-			<form action="${ctx}/blog/manage/${id}/update" method="post">
+			<a href="${ctx}/blog/m">返回上页</a>
+			<form action="${ctx}/blog/m/${id}/update" method="post">
 				<fieldset>
 					<legend>修改文章</legend>
 					<label>标题:</label><input type="text" name="title" value="${article.title}"/><br/>

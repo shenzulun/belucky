@@ -32,8 +32,10 @@ public class AuthDaoImpl extends BaseDaoImpl implements IAuthDao{
 
 		public User mapRow(ResultSet rs, int rowNum) throws SQLException {
 			User user = new User();
+			user.setId(rs.getLong("id"));
 			user.setUserNo(rs.getString("user_no"));
 			user.setPassword(rs.getString("password"));
+			user.setSalt(rs.getString("salt"));
 			user.setStatus(rs.getString("status"));
 			String createDt = rs.getString("create_dt");
 			if(createDt != null){

@@ -17,11 +17,4 @@ public class IndexController extends AbstractController{
 //		log.info("index");
 		return "index";
 	}
-	
-	@RequestMapping("/admin")
-	public String toAdmin(){
-		return "admin/adminIndex";
-	}
-	
-	
 }

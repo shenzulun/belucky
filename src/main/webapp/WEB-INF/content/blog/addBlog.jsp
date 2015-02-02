@@ -13,7 +13,7 @@
 				<div>${message}</div>
 			</c:if>
 			<a href="${ctx}/index">返回首页</a>
-			<form action="${ctx}/blog/add" method="post">
+			<form action="${ctx}/blog/m/add" method="post">
 				<fieldset>
 					<legend>新增文章</legend>
 					<label>标题:</label><input type="text" name="title"/><br/>

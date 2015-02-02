@@ -32,8 +32,7 @@ public class ArticleServiceImpl implements IArticleService{
 	}
 
 	public void updateArticle(Article article) {
-		// TODO Auto-generated method stub
-		
+		articleDao.updateArticle(article);
 	}
 
 }

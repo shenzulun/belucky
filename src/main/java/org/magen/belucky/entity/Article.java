@@ -31,6 +31,10 @@ public class Article implements java.io.Serializable{
 	 * 非json请求界面展示用
 	 */
 	private String createDtStr;
+	/**
+	 * 标题缩写  展示到浏览器的标签页上
+	 */
+	private String shortTitle;
 	
 	public Article(){
 		
@@ -107,6 +111,17 @@ public class Article implements java.io.Serializable{
 			return DateTimeUtil.format(createDt);
 		}
 		return createDtStr;
+	}
+
+	public String getShortTitle() {
+		if(title != null){
+			if(title.length() >= 10){
+				return title.substring(0,10);
+			}else{
+				return title;
+			}
+		}
+		return shortTitle;
 	}
 	
 }

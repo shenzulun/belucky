@@ -26,13 +26,13 @@
 				<c:forEach items="${articles}" var="article">
 				<tr>
 					<td>				
-						<a href="#">${article.title}</a>
+						<a href="${ctx}/blog/${article.id}">${article.title}</a>
 					</td>
 					<td>${article.author}</td>
 					<td>${article.createDtStr}</td>
 					<td>
-						<a href="${ctx}/blog/manage/${article.id}/update">修改</a>
-						<a href="${ctx}/blog/manage/${article.id}/delete">删除</a>
+						<a href="${ctx}/blog/m/${article.id}/update">修改</a>
+						<a href="${ctx}/blog/m/${article.id}/delete">删除</a>
 					</td>
 				</tr>
 				</c:forEach>

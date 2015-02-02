@@ -16,7 +16,7 @@ public class AuthServiceImpl implements IAuthService{
 	@Autowired
 	private IAuthDao authDao;
 
-	public boolean logon(User user) {
+	public boolean login(User user) {
 		//校验用户号长度
 		String userNo = user.getUserNo();
 		if(StringUtils.isBlank(userNo)){
@@ -46,6 +46,13 @@ public class AuthServiceImpl implements IAuthService{
 			}
 		}
 		return isAuthPass;
+	}
+	
+	/**
+	 * 设定安全的密码，生成随机的salt并经过1024次 sha-1 hash
+	 */
+	private void entryptPassword(User user) {
+		
 	}
 
 }
