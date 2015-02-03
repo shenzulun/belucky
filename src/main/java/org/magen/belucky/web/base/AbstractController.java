@@ -27,7 +27,7 @@ public abstract class AbstractController {
 		String contentType = request.getHeader("content-type");
 		if(contentType != null && contentType.equals("application/x-www-form-urlencoded")){
 //			handleExceptionAJAX(new AjaxException(ex),request,response);
-			return null;
+//			return null;
 		}
 		log.error(getTrace(ex));
 		ModelAndView view = new ModelAndView();

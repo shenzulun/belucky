@@ -12,12 +12,9 @@
 			<div class="page">
 				<c:forEach items="${articles}" var="article">
 				<div class="article">				
-					<h2 class="article-title"><a href="#">${article.title}</a></h2>
+					<h2 class="article-title"><a href="${ctx}/blog/${article.id}">${article.title}</a></h2>
 					<div class="article-date">${article.createDtStr}</div>
-					<div class="article-content">
-						<p>${article.content}</p>
-						<p><a href="${ctx}/blog/${article.id}" class="more-link">read more...</a></p>
-					</div>
+					<div class="article-content md-div" id="${article.id}">${article.content}</div>
 				</div>
 				</c:forEach>
 				<div>

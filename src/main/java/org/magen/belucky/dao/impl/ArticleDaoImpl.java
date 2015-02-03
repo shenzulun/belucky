@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
 public class ArticleDaoImpl extends BaseDaoImpl implements IArticleDao {
 	
 	public List<Article> queryAllArticle() {
-		return this.getJdbcTemplate().query( "select * from t_article", new ArticleMapper());
+		return this.getJdbcTemplate().query( "select * from t_article order by id desc", new ArticleMapper());
 	}
 
 	public Article queryArticleById(long id) {
@@ -39,9 +39,9 @@ public class ArticleDaoImpl extends BaseDaoImpl implements IArticleDao {
 			article.setTitle(rs.getString("title"));
 			//转换换行符为<br/>
 			String dbContent = rs.getString("content");
-			if(dbContent != null){
-				dbContent = dbContent.replace("\r\n", "<br/>").replace("\n", "<br/>");
-			}
+//			if(dbContent != null){
+//				dbContent = dbContent.replace("\r\n", "<br/>").replace("\n", "<br/>");
+//			}
 			article.setContent(dbContent);
 			article.setAuthor(rs.getString("author"));
 			String createDt = rs.getString("create_dt");

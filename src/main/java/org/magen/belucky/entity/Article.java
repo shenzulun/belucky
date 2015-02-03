@@ -35,6 +35,10 @@ public class Article implements java.io.Serializable{
 	 * 标题缩写  展示到浏览器的标签页上
 	 */
 	private String shortTitle;
+	/**
+	 * 文章内容 界面展示用
+	 */
+	private String showContent;
 	
 	public Article(){
 		
@@ -115,7 +119,7 @@ public class Article implements java.io.Serializable{
 
 	public String getShortTitle() {
 		if(title != null){
-			if(title.length() >= 10){
+			if(title.length() >= 20){
 				return title.substring(0,10);
 			}else{
 				return title;
@@ -123,5 +127,16 @@ public class Article implements java.io.Serializable{
 		}
 		return shortTitle;
 	}
+
+	public String getShowContent() {
+		//转换换行符为<br/>
+		if(content != null){
+			showContent = content.replace("\r\n", "<br/>").replace("\n", "<br/>");
+			return showContent;
+		}
+		return content;
+	}
+	
+	
 	
 }

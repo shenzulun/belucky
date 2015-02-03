@@ -13,14 +13,11 @@
 				<div class="article">				
 					<h2 class="article-title"><a href="#">${article.title}</a></h2>
 					<div class="article-date">${article.createDtStr}</div>
-					<div class="article-content">
-						<p>${article.content}</p>
-					</div>
+					<div class="article-content md-div">${article.content}</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	
 <%@include file="../base/footer.jsp"%>
 </body>
 </html>
