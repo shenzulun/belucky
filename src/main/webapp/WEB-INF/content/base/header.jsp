@@ -5,7 +5,7 @@
 
 <link rel="stylesheet" type="text/css" href="${ctx}/static/css/basestyle.css" />
 <script type="text/javascript" src="${ctx}/static/js/common.js"></script>
-<script type="text/javascript" src="${ctx}/static/js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="${ctx}/static/js/jquery-1.8.0.min.js"></script>
 <!-- pagedown start -->
 <link rel="stylesheet" type="text/css" href="${ctx}/static/css/md/mdstyle.css" />
 <script type="text/javascript" src="${ctx}/static/js/md/Markdown.Converter.js"></script>
@@ -14,15 +14,15 @@
 <script>
 $(document).ready(function(){
 	$(".md-div").each(function(){
-		var mdVal =  $(this).text();
+		var mdVal = $(this).text();
 		var _id = $(this).attr('id');   //id不为空，则判断是否要截断文章
 		if(_id != null && mdVal.length > CommonConst.ARTICLE_READ_MORE){			
 		//add read-more flag
 		mdVal = mdVal.substring(0,CommonConst.ARTICLE_READ_MORE) + "...";
 		mdVal += "<p><a href=\"${ctx}/blog/"+_id+"\" class=\"more-link\">read more...</a></p>";
-		}
+		}		
 		var converter = new Markdown.Converter();
-        var htmlVal = converter.makeHtml(mdVal);	     
+        var htmlVal = converter.makeHtml(mdVal);	
         $(this).empty();
         $(this).append(htmlVal);    
 	});

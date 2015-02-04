@@ -13,7 +13,7 @@
 				<div class="article">				
 					<h2 class="article-title"><a href="#">${article.title}</a></h2>
 					<div class="article-date">${article.createDtStr}</div>
-					<div class="article-content md-div">${article.content}</div>
+					<div class="article-content md-div"><pre>${article.content}</pre></div>
 				</div>
 			</div>
 		</div>

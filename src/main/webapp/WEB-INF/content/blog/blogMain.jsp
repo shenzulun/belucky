@@ -14,7 +14,7 @@
 				<div class="article">				
 					<h2 class="article-title"><a href="${ctx}/blog/${article.id}">${article.title}</a></h2>
 					<div class="article-date">${article.createDtStr}</div>
-					<div class="article-content md-div" id="${article.id}">${article.content}</div>
+					<div class="article-content md-div" id="${article.id}"><pre>${article.content}</pre></div>
 				</div>
 				</c:forEach>
 				<div>
