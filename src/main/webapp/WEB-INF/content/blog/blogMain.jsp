@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>list</title>
+	<title>陋室</title>
 	<%@include file="../base/header.jsp"%>
 </head>
 <body>
@@ -18,7 +18,15 @@
 				</div>
 				</c:forEach>
 				<div>
-				<p class="pages">Page 1 of 2 &nbsp;&nbsp;&nbsp; <span>1</span> <a href="#">2</a> <a href="#">&raquo;</a></p>
+				<p class="pages">Page ${page.currentPage} of ${page.totalPage} &nbsp;&nbsp;&nbsp; 
+				<c:if test="${page.currentPage > 1}">
+					<a href="${ctx}/blog/p/${page.currentPage - 1}">${page.currentPage - 1}</a>
+				</c:if>
+				<span>${page.currentPage}</span> 
+				<c:if test="${page.totalPage > 1 && page.totalPage != page.currentPage}">
+					<a href="${ctx}/blog/p/${page.currentPage + 1}">${page.currentPage + 1}</a>
+				</c:if> 
+				<a href="${ctx}/blog/p/${page.totalPage}">&raquo;</a></p>
 				</div>
 			</div>
 		</div>

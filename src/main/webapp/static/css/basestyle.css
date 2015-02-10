@@ -227,8 +227,29 @@ div.go-top div.stick {
 	transition: opacity 1s ease;
 }
 
+.mudule-index{
+	
+}
+.module-index p{
+	margin: 0px auto;
+	padding-top: 10px;
+	text-align:center;
+	font-size: 50px;
+}
+.module-index a{
+	padding: 10px 20px;
+	color: #4876FF;
+	
+}
+.module-index a:hover {
+	background-color: #5789bb;
+	color: #fff;
+}
 .module-show{
+	left:50%;
+	top:50%;
 	margin: 0 auto;	
+	
 }
 
 .module-show a{
@@ -249,11 +270,23 @@ div.go-top div.stick {
 	.container,.footer{
 		width: 96%;
 	}
+	
+	div.go-top {	   
+	    bottom: 50px;
+	    left: 90%;
+	    margin-left: 30px;
+	}
 }
 /* for 768px or less */
 @media screen and (max-width: 768px) {
 	.container,.footer{
 		width: 96%;
+	}
+	
+	div.go-top {	   
+	    bottom: 50px;
+	    left: 85%;
+	    margin-left: 20px;
 	}
 }
 /* for 480px or less */
@@ -280,5 +313,11 @@ div.go-top div.stick {
 	.header h2 {
 		font-size:18px;
 		padding:5px 0;
+	}
+	
+	div.go-top {	   
+	    bottom: 50px;
+	    left: 80%;
+	    margin-left: 10px;
 	}
 }

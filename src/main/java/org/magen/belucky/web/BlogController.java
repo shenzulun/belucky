@@ -1,6 +1,8 @@
 package org.magen.belucky.web;
 
 import java.util.List;
+
+import org.magen.belucky.common.Page;
 import org.magen.belucky.entity.Article;
 import org.magen.belucky.service.IArticleService;
 import org.magen.belucky.web.base.AbstractController;
@@ -21,8 +23,18 @@ public class BlogController extends AbstractController{
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String list(Model model){
-		List<Article> articles = articleService.queryAllArticle();
+		Page page = new Page();
+		List<Article> articles = articleService.queryArticleByPage(page);
 		model.addAttribute("articles",articles);
+		model.addAttribute("page",page);
+		return "blog/blogMain";
+	}
+	
+	@RequestMapping(value="/p/{currentPage}",method = RequestMethod.GET)
+	public String listByPage(@PathVariable("currentPage") int currentPage,Model model, Page page){
+		List<Article> articles = articleService.queryArticleByPage(page);
+		model.addAttribute("articles",articles);
+		model.addAttribute("page",page);
 		return "blog/blogMain";
 	}
 	

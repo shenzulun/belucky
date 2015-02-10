@@ -3,6 +3,8 @@ package org.magen.belucky.dao.impl;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+
+import org.magen.belucky.common.Page;
 import org.magen.belucky.dao.IArticleDao;
 import org.magen.belucky.dao.base.BaseDaoImpl;
 import org.magen.belucky.entity.Article;
@@ -59,6 +61,24 @@ public class ArticleDaoImpl extends BaseDaoImpl implements IArticleDao {
 	public void updateArticle(Article article) {
 		String sql = "update t_article set title=?,content=?,author=?,update_dt=datetime('now') where id=?";
 		this.getJdbcTemplate().update(sql, article.getTitle(),article.getContent(),article.getAuthor(),article.getId());
+	}
+
+	public List<Article> queryArticleByPage(Page page) {
+		if(page == null){
+			page = new Page();
+		}
+		int totalSize = this.getJdbcTemplate().queryForObject("select count(1) from t_article",Integer.class);
+		int pageSize = page.getPageSize();
+		page.setTotalSize(totalSize);
+		if(totalSize % pageSize == 0){
+			page.setTotalPage(totalSize / pageSize);
+		}else{
+			page.setTotalPage(totalSize / pageSize + 1);
+		}
+		StringBuilder sqlBuilder = new StringBuilder("select * from t_article order by id desc limit ");
+		int startRow = (page.getCurrentPage() - 1) * page.getPageSize();
+		sqlBuilder.append(startRow).append(",").append(page.getPageSize());
+		return this.getJdbcTemplate().query(sqlBuilder.toString(), new ArticleMapper());
 	}
 
 }

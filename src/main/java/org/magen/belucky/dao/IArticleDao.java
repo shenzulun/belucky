@@ -2,6 +2,7 @@ package org.magen.belucky.dao;
 
 import java.util.List;
 
+import org.magen.belucky.common.Page;
 import org.magen.belucky.dao.base.IBaseDao;
 import org.magen.belucky.entity.Article;
 
@@ -19,4 +20,10 @@ public interface IArticleDao extends IBaseDao{
 	public void saveArticle(Article article);
 	
 	public void updateArticle(Article article);
+	/**
+	 * 分页查询
+	 * @param page
+	 * @return
+	 */
+	public List<Article> queryArticleByPage(Page page);
 }

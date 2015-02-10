@@ -1,6 +1,8 @@
 package org.magen.belucky.service.impl;
 
 import java.util.List;
+
+import org.magen.belucky.common.Page;
 import org.magen.belucky.dao.IArticleDao;
 import org.magen.belucky.entity.Article;
 import org.magen.belucky.service.IArticleService;
@@ -33,6 +35,10 @@ public class ArticleServiceImpl implements IArticleService{
 
 	public void updateArticle(Article article) {
 		articleDao.updateArticle(article);
+	}
+
+	public List<Article> queryArticleByPage(Page page) {		
+		return articleDao.queryArticleByPage(page);
 	}
 
 }
