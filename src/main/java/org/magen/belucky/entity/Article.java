@@ -1,9 +1,12 @@
 package org.magen.belucky.entity;
 
+import java.io.IOException;
 import java.util.Date;
 
+import org.magen.belucky.extend.md.MarkdownFactory;
 import org.magen.belucky.util.CustomDateSerializer;
 import org.magen.belucky.util.DateTimeUtil;
+import org.markdown4j.Markdown4jProcessor;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
@@ -129,9 +132,12 @@ public class Article implements java.io.Serializable{
 	}
 
 	public String getShowContent() {
-		//转换换行符为<br/>
 		if(content != null){
-			showContent = content.replace("\r\n", "<br/>").replace("\n", "<br/>");
+			try {
+				showContent = MarkdownFactory.getMarkdownProcessor().process(content);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 			return showContent;
 		}
 		return content;

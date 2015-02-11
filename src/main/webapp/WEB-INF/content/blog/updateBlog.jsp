@@ -2,8 +2,9 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>update blog</title>
+	<title>更新文章</title>
 	<%@include file="../base/header.jsp"%>
+	<%@include file="../base/pagedown_depend.jsp"%>
 </head>
 <body>
 	<div class="container">

@@ -11,7 +11,7 @@
 	<div class="container">
 		<div class="header">
 			<div class="module-index">
-				<p><a href="${ctx}/blog">博客</a></p>
+				<p><a href="${ctx}/blog">blog</a></p>
 			</div>
 		</div>
 		<div class="content">

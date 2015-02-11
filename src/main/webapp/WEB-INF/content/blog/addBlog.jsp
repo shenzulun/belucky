@@ -4,6 +4,7 @@
 <head>
 	<title>发布文章</title>
 	<%@include file="../base/header.jsp"%>
+	<%@include file="../base/pagedown_depend.jsp"%>
 </head>
 <body>
 	<div class="container">

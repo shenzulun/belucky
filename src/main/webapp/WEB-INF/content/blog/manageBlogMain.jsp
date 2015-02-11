@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>list</title>
+	<title>文章清单</title>
 	<%@include file="../base/header.jsp"%>
 </head>
 <body>
