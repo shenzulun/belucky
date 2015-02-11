@@ -37,7 +37,6 @@ $(document).ready(function(){
     });
     
     //SyntaxHighlighter.config.clipboardSwf = 'static/js/highlight/clipboard.swf';
-    SyntaxHighlighter.config.clipboardSwf ='http://www.it165.net/statics/js/syntaxhighlighter/scripts/clipboard.swf';
 	//SyntaxHighlighter.config.strings = {
 		//expandSource : '展开代码',
 		//viewSource : '查看代码',
