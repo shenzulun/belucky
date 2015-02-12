@@ -5,7 +5,7 @@
             <li class="active"><a href="${ctx}/blog">新生</a></li>
             <li><a href="#">留存</a></li>
             <li><a href="#">分类</a></li>
-			<li><a href="#">关于我</a></li>			
+			<li><a href="${ctx}/about">关于我</a></li>			
       		</ul>
   		</div>
 </div>
