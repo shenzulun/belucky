@@ -9,6 +9,11 @@ import org.magen.belucky.entity.Article;
 import org.magen.belucky.extend.md.MarkdownFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+/**
+ * markdown4j测试
+ * @date 2015年2月12日
+ * @author shenzl
+ */
 public class MarkdownTest extends BaseTest{
 	
 	@Autowired

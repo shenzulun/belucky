@@ -2,12 +2,9 @@ package org.magen.belucky.entity;
 
 import java.io.IOException;
 import java.util.Date;
-
 import org.magen.belucky.extend.md.MarkdownFactory;
 import org.magen.belucky.util.CustomDateSerializer;
 import org.magen.belucky.util.DateTimeUtil;
-import org.markdown4j.Markdown4jProcessor;
-
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
 /**
@@ -17,21 +14,33 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
  */
 public class Article implements java.io.Serializable{
 	private static final long serialVersionUID = -6455522246943805543L;
-	
+	/**
+	 * 主键id
+	 */
 	private long id;
-	
+	/**
+	 * 标题
+	 */
 	private String title;
-	
+	/**
+	 * 内容
+	 */
 	private String content;
-	
+	/**
+	 * 作者
+	 */
 	private String author;
-	
+	/**
+	 * 创建日期
+	 */
 	private Date createDt;
-	
+	/**
+	 * 更新日期
+	 */
 	private Date updateDt;
 	
 	/**
-	 * 非json请求界面展示用
+	 * 创建日期，非json请求界面展示用
 	 */
 	private String createDtStr;
 	/**

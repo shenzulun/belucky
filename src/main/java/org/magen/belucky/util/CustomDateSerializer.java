@@ -9,6 +9,11 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 
+/**
+ * 日期格式化，json使用
+ * @date 2015年2月12日
+ * @author shenzl
+ */
 public class CustomDateSerializer extends JsonSerializer<Date>{
 
 	@Override

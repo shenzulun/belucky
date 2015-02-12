@@ -12,16 +12,29 @@ import org.magen.belucky.entity.Article;
  * @author shenzl
  */
 public interface IArticleDao extends IBaseDao{
-	
+	/**
+	 * 查询所有文章，没有分页
+	 * @return
+	 */
 	public List<Article> queryAllArticle();
-	
+	/**
+	 * 根据id查询文章
+	 * @param id
+	 * @return
+	 */
 	public Article queryArticleById(long id);
-	
+	/**
+	 * 保存文章
+	 * @param article
+	 */
 	public void saveArticle(Article article);
-	
+	/**
+	 * 更新文章
+	 * @param article
+	 */
 	public void updateArticle(Article article);
 	/**
-	 * 分页查询
+	 * 分页查询文章
 	 * @param page
 	 * @return
 	 */

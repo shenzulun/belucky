@@ -20,12 +20,19 @@ import org.springframework.web.servlet.ModelAndView;
 public abstract class AbstractController {
 	protected Logger log = LoggerFactory.getLogger(this.getClass());
 	
+	/**
+	 * 捕获异常
+	 * @param ex
+	 * @param request
+	 * @param response
+	 * @return
+	 */
 	@ExceptionHandler(Exception.class)
 	@ResponseStatus(value=HttpStatus.INTERNAL_SERVER_ERROR)
 	public ModelAndView handleException500(Exception ex, HttpServletRequest request
 			,HttpServletResponse response) {
 		String contentType = request.getHeader("content-type");
-		if(contentType != null && contentType.equals("application/x-www-form-urlencoded")){
+		if("application/x-www-form-urlencoded".equals(contentType)){
 //			handleExceptionAJAX(new AjaxException(ex),request,response);
 //			return null;
 		}
@@ -35,22 +42,6 @@ public abstract class AbstractController {
 		view.setViewName("error/500");
 		return view;
 	}
-	
-	/**
-	 * 处理AJAX请求产生的异常
-	 * @param ex
-	 * @param request
-	 * @return
-	 */
-//	@ExceptionHandler(AjaxException.class)
-//	public void handleExceptionAJAX(AjaxException ex, HttpServletRequest request
-//			,HttpServletResponse response) {
-//		Map<String,Object> map = new HashMap<String,Object>();
-//		log.error(getTrace(ex));
-//		map.put("code", ex.getCode());
-//		map.put("desc", getMessage(ex));
-//		JsonUtil.printStream(map,response);	
-//	}
 	
 	/**获取异常的所有信息*/
 	private String getTrace(Throwable t){

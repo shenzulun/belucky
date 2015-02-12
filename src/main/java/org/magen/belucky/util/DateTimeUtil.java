@@ -6,6 +6,11 @@ import java.util.Locale;
 
 import org.springframework.format.datetime.DateFormatter;
 
+/**
+ * 时间日期工具类
+ * @date 2015年2月12日
+ * @author shenzl
+ */
 public class DateTimeUtil {
 	public static final String DEFAULT_DATE_PATTERN = "yyyy-MM-dd";
 	public static final String DEFAULT_DATETIME_PATTERN = "yyyy-MM-dd HH:mm:ss";
@@ -63,11 +68,21 @@ public class DateTimeUtil {
 		}
 		return date;
 	}
-	
+	/**
+	 * 格式化字符串为日期
+	 * @param text
+	 * @param pattern 类似：yyyy-MM-dd HH:mm:ss
+	 * @return
+	 */
 	public static Date parse(String text, String pattern){
 		return parse(text,pattern,Locale.CHINESE);
 	}
 	
+	/**
+	 * 格式化字符串为日期，默认yyyy-MM-dd HH:mm:ss
+	 * @param text
+	 * @return
+	 */
 	public static Date parse(String text){
 		return parse(text,DEFAULT_DATETIME_PATTERN,Locale.CHINESE);
 	}

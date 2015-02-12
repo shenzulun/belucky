@@ -9,6 +9,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * 权限服务实现类
+ * @date 2015年2月12日
+ * @author shenzl
+ */
 @Service("authService")
 public class AuthServiceImpl implements IAuthService{
 	protected Logger log = LoggerFactory.getLogger(getClass());	

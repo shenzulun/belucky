@@ -2,6 +2,11 @@ package org.magen.belucky.service;
 
 import org.magen.belucky.entity.User;
 
+/**
+ * 权限服务接口类
+ * @date 2015年2月12日
+ * @author shenzl
+ */
 public interface IAuthService {
 	
 	/**

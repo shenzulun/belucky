@@ -9,21 +9,35 @@ import java.util.Date;
  */
 public class User implements java.io.Serializable{
 	private static final long serialVersionUID = 1508089208570316427L;
-	
+	/**
+	 * 主键id
+	 */
 	private Long id;
-	
+	/**
+	 * 用户号，对应登录框的用户名
+	 */
 	private String userNo;
-	
+	/**
+	 * 用户昵称
+	 */
 	private String userName;
 	
 	private transient String inputPassword;
-	
+	/**
+	 * 用户密码
+	 */
 	private String password;
-	
+	/**
+	 * 创建日期
+	 */
 	private Date createDt;
-	
+	/**
+	 * 状态 1-正常 2-已锁定
+	 */
 	private String status;
-	
+	/**
+	 *  盐
+	 */
 	private String salt;
 	
 	

@@ -6,6 +6,11 @@ import javax.servlet.http.HttpSession;
 import org.apache.commons.lang.StringUtils;
 import org.magen.belucky.common.CodeConst;
 
+/**
+ * session工具类
+ * @date 2015年2月12日
+ * @author shenzl
+ */
 public class SessionUtil {
 	
 	/**

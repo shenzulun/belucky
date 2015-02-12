@@ -12,6 +12,11 @@ import org.magen.belucky.util.DateTimeUtil;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+/**
+ * 文章CRUD实现类
+ * @date 2015年2月12日
+ * @author shenzl
+ */
 @Repository("articleDao")
 public class ArticleDaoImpl extends BaseDaoImpl implements IArticleDao {
 	
@@ -32,7 +37,11 @@ public class ArticleDaoImpl extends BaseDaoImpl implements IArticleDao {
 		String sql = "insert into t_article(title,content,author,create_dt) values(?,?,?,datetime('now'))";
 		this.getJdbcTemplate().update(sql, article.getTitle(),article.getContent(),article.getAuthor());
 	}
-	
+	/**
+	 * 文章model包装类
+	 * @date 2015年2月12日
+	 * @author shenzl
+	 */
 	private static final class ArticleMapper implements RowMapper<Article> {
 
 		public Article mapRow(ResultSet rs, int rowNum) throws SQLException {

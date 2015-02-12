@@ -8,6 +8,11 @@ import org.magen.belucky.base.BaseTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
+/**
+ * 单元测试：基础dao
+ * @date 2015年2月12日
+ * @author shenzl
+ */
 public class BaseDaoTest extends BaseTest{
 	
 	@Autowired

@@ -11,6 +11,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * 文章服务实现类
+ * @date 2015年2月12日
+ * @author shenzl
+ */
 @Service("articleService")
 public class ArticleServiceImpl implements IArticleService{
 	protected Logger log = LoggerFactory.getLogger(getClass());	

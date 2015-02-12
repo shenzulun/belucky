@@ -12,9 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController extends AbstractController{
 	
+	/**
+	 * 跳转到首页
+	 * @return
+	 */
 	@RequestMapping("/index")
 	public String index(){
-//		log.info("index");
 		return "index";
 	}
 }

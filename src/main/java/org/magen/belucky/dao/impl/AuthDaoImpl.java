@@ -11,6 +11,11 @@ import org.magen.belucky.util.DateTimeUtil;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+/**
+ * 权限DAO实现类
+ * @date 2015年2月12日
+ * @author shenzl
+ */
 @Repository("authDao")
 public class AuthDaoImpl extends BaseDaoImpl implements IAuthDao{
 
@@ -28,6 +33,11 @@ public class AuthDaoImpl extends BaseDaoImpl implements IAuthDao{
 		return user;
 	}
 	
+	/**
+	 * 用户model的包装
+	 * @date 2015年2月12日
+	 * @author shenzl
+	 */
 	private static final class UserMapper implements RowMapper<User> {
 
 		public User mapRow(ResultSet rs, int rowNum) throws SQLException {

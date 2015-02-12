@@ -1,14 +1,27 @@
 package org.magen.belucky.common;
 
+/**
+ * 分页组件
+ * @date 2015年2月12日
+ * @author shenzl
+ */
 public class Page {
-	
-	private int pageSize = 5;   //每页记录数
-	
-	private int currentPage = 1;   //当前页数
-	
-	private int totalSize;  //总的记录数
-	
-	private int totalPage;  //总的页数
+	/**
+	 * 每页记录数,默认5
+	 */
+	private int pageSize = 5;  
+	/**
+	 * 当前页数,初始化1
+	 */
+	private int currentPage = 1;   
+	/**
+	 * 总的记录数
+	 */
+	private int totalSize;  
+	/**
+	 * 总的页数
+	 */
+	private int totalPage;  
 
 	public int getPageSize() {
 		return pageSize;
