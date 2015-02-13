@@ -14,7 +14,11 @@ import com.github.rjeschke.txtmark.Configuration;
 import com.github.rjeschke.txtmark.Processor;
 import com.github.rjeschke.txtmark.Configuration.Builder;
 
-
+/**
+ * markdown4j改进 支持自定义代码格式
+ * @date 2015年2月13日
+ * @author shenzl
+ */
 public class ExtraMarkdown4jProcessor{
 	private Builder builder;
 	

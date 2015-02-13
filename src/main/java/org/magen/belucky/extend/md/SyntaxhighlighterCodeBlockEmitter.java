@@ -6,6 +6,11 @@ import org.apache.commons.lang.StringUtils;
 
 import com.github.rjeschke.txtmark.BlockEmitter;
 
+/**
+ * markdown code模块解析，适配Syntaxhighlighter
+ * @date 2015年2月13日
+ * @author shenzl
+ */
 public class SyntaxhighlighterCodeBlockEmitter implements BlockEmitter{
 
 	public void emitBlock(StringBuilder out, List<String> lines, String meta) {

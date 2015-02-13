@@ -1,5 +1,10 @@
 package org.magen.belucky.extend.md;
 
+/**
+ * markdown解析工厂
+ * @date 2015年2月13日
+ * @author shenzl
+ */
 public class MarkdownFactory {
 	
 	private MarkdownFactory(){}
