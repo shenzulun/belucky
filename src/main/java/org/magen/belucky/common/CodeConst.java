@@ -41,6 +41,10 @@ public final class CodeConst {
 	 * 参数：单个article
 	 */
 	public static final String PARAM_ARTICLE = "article";
+	/**
+	 * 参数：返回信息
+	 */
+	public static final String PARAM_MESSAGE = "message";
 	
 	//=======================jsp 参数  end
 	

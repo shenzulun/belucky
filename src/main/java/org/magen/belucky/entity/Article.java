@@ -143,7 +143,7 @@ public class Article implements java.io.Serializable{
 	public String getShowContent() {
 		if(content != null){
 			try {
-				showContent = MarkdownFactory.getMarkdownProcessor().process(content);
+				showContent = MarkdownFactory.getMarkdownProcessor().process(content,true);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

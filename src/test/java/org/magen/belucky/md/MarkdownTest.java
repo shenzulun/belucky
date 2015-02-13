@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @author shenzl
  */
 public class MarkdownTest extends BaseTest{
+	public static final int RUN_TIMES = 10;
 	
 	@Autowired
 	private IArticleDao articleDao;
@@ -29,6 +30,36 @@ public class MarkdownTest extends BaseTest{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
+	}
+	
+	/**
+	 * 测试markdown解析效率
+	 * @throws IOException 
+	 */
+	@Test
+	public void testProcess1() throws IOException{
+		long start = System.currentTimeMillis();
+		Article article = articleDao.queryArticleById(7L);
+		for(int i=0;i<RUN_TIMES;i++){
+			String sNewText = MarkdownFactory.getMarkdownProcessor().process(article.getContent());
+		}
+		long end = System.currentTimeMillis();
+		System.out.println("process1 耗时:" + (end - start));
+	}
+	
+	/**
+	 * 测试markdown解析效率
+	 * @throws IOException 
+	 */
+	@Test
+	public void testProcess2() throws IOException{
+		long start = System.currentTimeMillis();
+		Article article = articleDao.queryArticleById(7L);
+		for(int i=0;i<RUN_TIMES;i++){
+			String sNewText = MarkdownFactory.getMarkdownProcessor().process(article.getContent(),true);
+			System.out.println("after->" + sNewText);
+		}
+		long end = System.currentTimeMillis();
+		System.out.println("process2 耗时:" + (end - start));
 	}
 }

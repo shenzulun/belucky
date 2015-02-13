@@ -26,6 +26,18 @@ $(document).ready(function(){
         $(this).append(htmlVal);    
 	});
 	
+	$(".read-more").each(function(){
+		var mdVal = $(this).html();
+		var _id = $(this).attr('id');   //id不为空，则判断是否要截断文章
+		if(_id != null && mdVal.length > CommonConst.ARTICLE_READ_MORE){			
+			//add read-more flag
+			mdVal = mdVal.substring(0,CommonConst.ARTICLE_READ_MORE) + "...";
+			mdVal += "<p><a href=\"${ctx}/blog/"+_id+"\" class=\"more-link\">read more...</a></p>";
+		}				
+        $(this).empty();
+        $(this).append(mdVal);    
+	});
+	
     $(window).scroll(function() {
         if ($(window).scrollTop() > 0)
             $('div.go-top').show();

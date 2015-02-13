@@ -92,7 +92,7 @@ public class BlogController extends AbstractController{
 	@RequestMapping(value="/m/add",method = RequestMethod.POST)
 	public String add(Article article, RedirectAttributes redirectAttributes){
 		articleService.saveArticle(article);
-		redirectAttributes.addFlashAttribute("message","发布文章["+article.getTitle()+"]成功!");
+		redirectAttributes.addFlashAttribute(CodeConst.PARAM_MESSAGE,"发布文章["+article.getTitle()+"]成功!");
 		return UrlMapperConst.REDIRECT_TO_BLOG_M;
 	}
 	/**
@@ -127,7 +127,7 @@ public class BlogController extends AbstractController{
 	@RequestMapping(value="/m/{id}/update",method = RequestMethod.POST)
 	public String update(Article article, RedirectAttributes redirectAttributes){
 		articleService.updateArticle(article);
-		redirectAttributes.addFlashAttribute("message","更新文章["+article.getTitle()+"]成功!");
+		redirectAttributes.addFlashAttribute(CodeConst.PARAM_MESSAGE,"更新文章["+article.getTitle()+"]成功!");
 		return UrlMapperConst.REDIRECT_TO_BLOG_M;
 	}
 	/**
@@ -139,7 +139,7 @@ public class BlogController extends AbstractController{
 	@RequestMapping(value="/m/{id}/delete",method = RequestMethod.GET)
 	public String delete(@PathVariable("id") Long id,RedirectAttributes redirectAttributes){
 		articleService.deleteArticle(id);
-		redirectAttributes.addFlashAttribute("message","删除文章["+id+"]成功!");
+		redirectAttributes.addFlashAttribute(CodeConst.PARAM_MESSAGE,"删除文章["+id+"]成功!");
 		return UrlMapperConst.REDIRECT_TO_BLOG_M;
 	}
 }
