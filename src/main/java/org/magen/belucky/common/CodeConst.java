@@ -46,6 +46,11 @@ public final class CodeConst {
 	 */
 	public static final String PARAM_MESSAGE = "message";
 	
+	/**
+	 * 参数：单个tag
+	 */
+	public static final String PARAM_TAG = "tag";
+	
 	//=======================jsp 参数  end
 	
 }

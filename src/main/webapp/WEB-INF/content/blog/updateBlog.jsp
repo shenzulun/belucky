@@ -17,7 +17,8 @@
 			<form action="${ctx}/blog/m/${id}/update" method="post">
 				<fieldset>
 					<legend><input type="submit" value="更新文章" /></legend>
-					<label>标题:</label><input type="text" name="title" value="${article.title}"/><br/>			
+					<label>标题:</label><input type="text" name="title" value="${article.title}"/><br/>
+					<label>标签:</label><input type="text" name="tags" value="${article.tags}"/><br/>	
 				<div class="wmd-panel">
 	            <div id="wmd-button-bar"></div>
 	            <textarea name="content" class="wmd-input tabIndent" id="wmd-input">${article.content}

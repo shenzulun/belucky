@@ -34,8 +34,8 @@ public class ArticleDaoImpl extends BaseDaoImpl implements IArticleDao {
 	}
 
 	public void saveArticle(Article article) {
-		String sql = "insert into t_article(title,content,author,create_dt) values(?,?,?,datetime('now'))";
-		this.getJdbcTemplate().update(sql, article.getTitle(),article.getContent(),article.getAuthor());
+		String sql = "insert into t_article(title,content,author,create_dt,tags) values(?,?,?,datetime('now'),?)";
+		this.getJdbcTemplate().update(sql, article.getTitle(),article.getContent(),article.getAuthor(),article.getTags());
 	}
 	/**
 	 * 文章model包装类
@@ -62,14 +62,15 @@ public class ArticleDaoImpl extends BaseDaoImpl implements IArticleDao {
 			}
 			if(updateDt != null){
 				article.setCreateDt(DateTimeUtil.parse(updateDt));
-			}
+			}		
+			article.setTags(rs.getString("tags"));
 			return article;
 		}
 	}
 
 	public void updateArticle(Article article) {
-		String sql = "update t_article set title=?,content=?,author=?,update_dt=datetime('now') where id=?";
-		this.getJdbcTemplate().update(sql, article.getTitle(),article.getContent(),article.getAuthor(),article.getId());
+		String sql = "update t_article set title=?,content=?,author=?,update_dt=datetime('now'),tags=? where id=?";
+		this.getJdbcTemplate().update(sql, article.getTitle(),article.getContent(),article.getAuthor(),article.getTags(),article.getId());
 	}
 
 	public List<Article> queryArticleByPage(Page page) {

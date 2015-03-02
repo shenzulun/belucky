@@ -47,4 +47,9 @@ public final class UrlMapperConst {
 	 * 重定向到博客管理台首页
 	 */
 	public static final String REDIRECT_TO_BLOG_M= "redirect:/blog/m";
+	
+	/**
+	 * 单个tag展示页面
+	 */
+	public static final String TAG_LIST_ONE = "blog/showOneTag";
 }

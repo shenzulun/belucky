@@ -51,6 +51,14 @@ public class Article implements java.io.Serializable{
 	 * 文章内容 界面展示用
 	 */
 	private String showContent;
+	/**
+	 * 标签
+	 */
+	private String tags;
+	/**
+	 * 标签数组，页面展示用，类似：Java,Life
+	 */
+	private String[] tagArr;
 	
 	public Article(){
 		
@@ -151,7 +159,20 @@ public class Article implements java.io.Serializable{
 		}
 		return content;
 	}
-	
-	
+
+	public String getTags() {
+		return tags;
+	}
+
+	public void setTags(String tags) {
+		this.tags = tags;
+	}
+
+	public String[] getTagArr() {
+		if(tags != null){
+			return tags.split(",");
+		}
+		return tagArr;
+	}
 	
 }

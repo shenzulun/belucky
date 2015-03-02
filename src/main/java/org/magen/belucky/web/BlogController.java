@@ -6,6 +6,7 @@ import org.magen.belucky.common.CodeConst;
 import org.magen.belucky.common.Page;
 import org.magen.belucky.common.UrlMapperConst;
 import org.magen.belucky.entity.Article;
+import org.magen.belucky.entity.Tag;
 import org.magen.belucky.service.IArticleService;
 import org.magen.belucky.web.base.AbstractController;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -141,5 +142,29 @@ public class BlogController extends AbstractController{
 		articleService.deleteArticle(id);
 		redirectAttributes.addFlashAttribute(CodeConst.PARAM_MESSAGE,"删除文章["+id+"]成功!");
 		return UrlMapperConst.REDIRECT_TO_BLOG_M;
+	}
+	/**
+	 * 展示所有标签
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value="/tag")
+	public String toShowTags(Model model){
+		Tag tag = new Tag();
+		model.addAttribute(CodeConst.PARAM_TAG, tag);
+		return UrlMapperConst.TAG_LIST_ONE;
+	}
+	/**
+	 * 展示单个标签
+	 * @param tagName
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value="/tag/{tagName}")
+	public String toShowOneTag(@PathVariable("tagName") String tagName,Model model){
+		Tag tag = new Tag();
+		tag.setTagName(tagName);
+		model.addAttribute(CodeConst.PARAM_TAG, tag);
+		return UrlMapperConst.TAG_LIST_ONE;
 	}
 }

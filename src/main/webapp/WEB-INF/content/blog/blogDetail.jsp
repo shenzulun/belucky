@@ -12,7 +12,11 @@
 			<div class="page">			
 				<div class="article">				
 					<h2 class="article-title"><a href="#">${article.title}</a></h2>
-					<div class="article-date">${article.createDtStr}</div>
+					<div class="article-date">${article.createDtStr} &nbsp;&nbsp;&nbsp;&nbsp;Tag:&nbsp;
+					<c:forEach items="${article.tagArr}" var="tag">
+						<a href="${ctx}/blog/tag/${tag}">${tag}</a>&nbsp;&nbsp;
+					</c:forEach>
+					</div>
 					<div class="article-content">${article.showContent}</div>
 				</div>
 			</div>
