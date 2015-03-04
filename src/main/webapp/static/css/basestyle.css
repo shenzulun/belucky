@@ -43,6 +43,11 @@ a:hover, a:active, a:focus {
 .header{
 	height: 10%;
 }
+.header pre{
+	align:center;
+	font-size: 14px;
+	color: white;
+}
 .content{
 	padding-bottom:60px;
 }
@@ -262,6 +267,10 @@ div.go-top div.stick {
 	height:400px;
 	font-family:Tahoma,Arial;
 	font-size:1.2em;
+}
+
+.color-white{
+	color: white;
 }
 
 /* ----- MEDIA QUERIES ----- */

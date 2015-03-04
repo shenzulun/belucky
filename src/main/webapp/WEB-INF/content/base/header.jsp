@@ -12,6 +12,7 @@
 
 <script>
 $(document).ready(function(){
+	/**
 	$(".md-div").each(function(){
 		var mdVal = $(this).text();
 		var _id = $(this).attr('id');   //id不为空，则判断是否要截断文章
@@ -24,7 +25,7 @@ $(document).ready(function(){
         var htmlVal = converter.makeHtml(mdVal);	
         $(this).empty();
         $(this).append(htmlVal);    
-	});
+	});*/
 	
 	$(".read-more").each(function(){
 		var mdVal = $(this).html();

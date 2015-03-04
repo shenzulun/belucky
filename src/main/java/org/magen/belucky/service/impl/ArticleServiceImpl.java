@@ -2,9 +2,12 @@ package org.magen.belucky.service.impl;
 
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.magen.belucky.common.Page;
 import org.magen.belucky.dao.IArticleDao;
+import org.magen.belucky.dao.ITagDao;
 import org.magen.belucky.entity.Article;
+import org.magen.belucky.entity.Tag;
 import org.magen.belucky.service.IArticleService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,6 +35,19 @@ public class ArticleServiceImpl implements IArticleService{
 
 	public void saveArticle(Article article) {
 		articleDao.saveArticle(article);
+		//保存tag
+//		if(StringUtils.isNotBlank(article.getTags())){
+//			String[] tagArr = article.getTagArr();
+//			for(String tagName : tagArr){
+//				Tag tag = tagDao.queryTagByName(tagName);
+//				if(tag == null){
+//					tag = new Tag();
+//					tag.setTagName(tagName);
+//					tagDao.saveTag(tag);
+//					
+//				}
+//			}
+//		}
 	}
 
 	public void deleteArticle(long id) {

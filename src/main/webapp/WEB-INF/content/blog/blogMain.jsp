@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>陋室</title>
+	<title>闲云局</title>
 	<%@include file="../base/header.jsp"%>
 </head>
 <body>
