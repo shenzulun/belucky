@@ -86,4 +86,9 @@ public class DateTimeUtil {
 	public static Date parse(String text){
 		return parse(text,DEFAULT_DATETIME_PATTERN,Locale.CHINESE);
 	}
+	
+	public static String formatAdd8(Date date){
+		date.setHours(date.getHours() + 8);
+		return format(date,DEFAULT_DATETIME_PATTERN);
+	}
 }

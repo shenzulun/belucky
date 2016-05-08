@@ -27,6 +27,7 @@ $(document).ready(function(){
         $(this).append(htmlVal);    
 	});*/
 	
+	/**   暂时去除read-more控制
 	$(".read-more").each(function(){
 		var mdVal = $(this).html();
 		var _id = $(this).attr('id');   //id不为空，则判断是否要截断文章
@@ -38,7 +39,7 @@ $(document).ready(function(){
         $(this).empty();
         $(this).append(mdVal);    
 	});
-	
+	*/
     $(window).scroll(function() {
         if ($(window).scrollTop() > 0)
             $('div.go-top').show();

@@ -132,7 +132,8 @@ public class Article implements java.io.Serializable{
 
 	public String getCreateDtStr() {
 		if(createDt != null){
-			return DateTimeUtil.format(createDt);
+			//时间少了8小时，东八区?
+			return DateTimeUtil.formatAdd8(createDt);
 		}
 		return createDtStr;
 	}
